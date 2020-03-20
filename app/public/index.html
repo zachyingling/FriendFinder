@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+    <script src="../../server.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Friend Finder</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <ion-icon
+        name="people-outline"
+        class="float-left"
+        id="people-icon"
+      ></ion-icon>
+      <h1>Friend Finder</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h2>Answer a few questions.</h2>
+          <h3>Find out which friend you are most compatible with.</h3>
+        </div>
+        <div class="col-6">
+          <a class="btn btn-primary btn-lg" href="/survey" role="button"
+            >Go to Survery</a
+          >
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-12">
+          <a href="/api/friends" target="_blank" rel="noopener noreferrer"
+            >API Friends List
+          </a>
+          |
+          <a href="http://" target="_blank" rel="noopener noreferrer">
+            GitHub Repo</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
