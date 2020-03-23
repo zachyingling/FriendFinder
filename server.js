@@ -10,9 +10,6 @@ const apiRoutes = require("./app/routing/apiRoutes")(app);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// console.log(htmlRoutes);
-// console.log(apiRoutes);
-
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
