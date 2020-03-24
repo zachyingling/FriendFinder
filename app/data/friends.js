@@ -36,25 +36,10 @@ module.exports = {
       scores: ["4", "4", "2", "3", "2", "2", "3", "2", "4", "5"]
     },
     {
-      name: "a",
-      photo: "b",
-      scores: ["3", "2", "1", "1", "1", "3", "1", "4", "1", "1"]
-    },
-    {
       name: "Branden Patten (https://github.com/pattenbranden)",
       photo:
         "https://avatars0.githubusercontent.com/u/57732191?s=460&u=a76cde823ee154753799eed9507b163f75cc8975&v=4",
       scores: ["5", "3", "4", "1", "4", "2", "4", "1", "2", "1"]
-    },
-    {
-      name: "Dannielle Taylor",
-      photo: "C:\\Users\\danni\\OneDrive\\Pictures\\Logitech Webcam",
-      scores: ["5", "4", "1", "2", "3", "1", "3", "1", "3", "1"]
-    },
-    {
-      name: "qweqweq",
-      photo: "qweq.jpg",
-      scores: ["2", "3", "4", "4", "2", "4", "4", "4", "2", "2"]
     }
   ]
 };

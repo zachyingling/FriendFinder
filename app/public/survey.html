@@ -56,7 +56,7 @@
         </div>
       </form>
       <hr />
-      <form>
+      <form action="/api/friends" method="post">
         <div class="form-group">
           <h4>Question 1</h4>
           <label for="selectQuestion1"
@@ -201,7 +201,6 @@
             <option>5</option>
           </select>
         </div>
-      </form>
       <hr />
       <div class="row" style="padding-bottom: 20px;">
         <div class="col-12">
@@ -215,8 +214,40 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary btn-lg btn-block">
-      Submit
-    </button>
+      <input
+        name="Submit"
+        value="Submit"
+        type="submit"
+        class="btn btn-primary btn-lg btn-block"
+        id="submit-button"
+        formmethod="POST"
+      />
+    </form>
+    <script>
+      $("#submit-button").on("click", function(e){
+        e.preventDefault();
+
+        var userScore = {
+          1: $("#selectQuestion1").val(),
+          2: $("#selectQuestion2").val(),
+          3: $("#selectQuestion3").val(),
+          4: $("#selectQuestion4").val(),
+          5: $("#selectQuestion5").val(),
+          6: $("#selectQuestion6").val(),
+          7: $("#selectQuestion7").val(),
+          8: $("#selectQuestion8").val(),
+          9: $("#selectQuestion9").val(),
+          10: $("#selectQuestion10").val()
+        }
+
+        $.post("/api/friends", userScore, (data) => {
+          if(data){
+            console.log("data passed through");
+          } else {
+            console.log("submit didn't work");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
