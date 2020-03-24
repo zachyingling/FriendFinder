@@ -1,5 +1,4 @@
 const friends = require("../data/friends");
-const bodyParser = require("body-parser");
 
 module.exports = function(app) {
   app.get("/api/friends", (req, res) => {
@@ -35,6 +34,6 @@ module.exports = function(app) {
       }
     }
 
-    res.json(true);
+    res.send(friends.friends[indexFlag]);
   });
 };

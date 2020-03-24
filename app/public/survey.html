@@ -18,9 +18,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script src="../../server.js"></script>
+    <script type="text/javascript" src="../../server.js"></script>
 
-    <link rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
 
     <title>Survey</title>
   </head>
@@ -221,6 +221,8 @@
         class="btn btn-primary btn-lg btn-block"
         id="submit-button"
         formmethod="POST"
+        data-toggle="modal"
+        data-target="#exampleModal"
       />
     </form>
     <script>
@@ -241,13 +243,29 @@
         }
 
         $.post("/api/friends", userScore, (data) => {
-          if(data){
-            console.log("data passed through");
-          } else {
-            console.log("submit didn't work");
-          }
+          $("#friend-name").text(data.name);
+          $("#friend-image").attr("src", data.photo);
         });
       });
     </script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Best Match</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4>Name: <span id="friend-name"></span></h4>
+            <img src="" alt="friend image" id="friend-image">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
