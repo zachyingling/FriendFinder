@@ -8,11 +8,20 @@ module.exports = function(app) {
 
   app.post("/api/friends", (req, res) => {
     let totalUserScore = 0;
+    let friendsScores = [];
     for (const property in req.body) {
       totalUserScore += Number(req.body[property]);
     }
 
-    console.log(friends);
+    for (const element of friends.friends) {
+      let tempFriendScore = 0;
+      for (let i = 0; i < element.scores.length; i++) {
+        tempFriendScore += Number(element.scores[i]);
+      }
+      friendsScores.push(tempFriendScore);
+    }
+
+    console.log(friendsScores);
 
     res.json(true);
   });
